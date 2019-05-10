@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片未加载完时显示优化的alt样式</title>
+	<style>
+		img {
+			display: block; 		/* 原应是inline-block，此处为了居中改为block */
+			width: 300px;
+			height: 300px;
+			position: relative;
+			overflow: hidden;
+			margin: 0 auto;
+			/* 去除firefox下的alt文字 */
+			color: transparent;
+		}
+		/*隐藏占位图片和alt*/
+		img:not([src]) {
+			visibility: hidden;
+		}
+		/*淡蓝色背景*/
+		img:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #f0f3f9;
+			visibility: visible;
+		}
+		img::after {
+			content: attr(alt);
+			position: absolute;
+			left: 0;bottom: 0;
+			width: 100%;
+			line-height: 30px;
+			text-align: center;
+			background: rgba(0,0,0,.5);
+			color: #fff;
+			font-size: 14px;
+			transform: translateY(100%);
+			transition: transform .3s;
+			visibility: visible;
+		}
+		img:hover::after {
+			transform: translateY(0);
+		}
+		button {
+			display: block;
+			margin: 20px auto;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+	<img alt="金木小天使">
+	<button>给图片添加src属性值</button>
+	<script>
+		$(document).on("click","button",function () {
+			$("img").attr("src","https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1389876620,4281977511&fm=26&gp=0.jpg")
+		})
+	</script>
+</body>
+</html>
