@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高度可控的分隔符</title>
+	<style>
+		.con {
+			width: 500px;
+			margin: 0 auto;
+		}
+		a {
+			text-decoration: none;
+			color: #6fa9c7;
+			font-size: 14px;
+		}
+		a+a:before {
+			content: "";
+			font-size: 0;
+			padding: 10px 3px 1px;
+			margin-left: 10px;
+			border-left: 1px solid #ddd;
+		}
+		.tips {
+			width: 200px;
+			border: 1px solid #6fa9c7;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+	<div class="con">
+		<a href="javascript:;">登录</a><a href="javascript:;">注册</a>
+
+		<p class="tips">
+			分隔符“|”的高度等于：伪类选择器中padding的top+bottom，即10px+1px=11px
+				<b>注：</b>文字对齐方式为基线对齐，故top为0时仅设置bottom，分割线会基于基线向下，这是错误的！
+			分隔符“|”的宽度等于：border-left的边线宽度1px
+			分隔符“|”与第二个&gt;a&lt;之间的间距等于：padding的left+right即3px+3px=6px
+				<b>注：</b>一般来讲，两个&gt;a&lt;与分隔符“|”的间距应保持一致，故margin-left的值应为上述padding的left+right，即3px+3px=6px
+		</p>
+	</div>
+	
+	<script>
+		
+	</script>
+</body>
+</html>
