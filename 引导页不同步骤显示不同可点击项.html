@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>引导页不同步骤显示不同可点击项</title>
+	<style>
+		.text,button,img {
+			margin: 50px;
+			position: relative;
+		}
+		.text {
+			border: 1px solid red;
+		}
+		.mask {
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(136,136,136,.5);
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 1000;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div class="con">
+		<div id="step-1" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo nisi doloremque fugit praesentium maiores, minus, non deleniti amet iusto animi officia error laudantium impedit quidem quaerat ratione recusandae! Veritatis, pariatur!Non at laudantium aperiam, eos reiciendis officia obcaecati ullam harum expedita corporis similique distinctio quos pariatur veritatis excepturi ipsa totam amet asperiores reprehenderit ipsam. Aliquid unde magni necessitatibus quibusdam nostrum.
+		Aperiam vero aut sapiente officiis qui. Totam, quia distinctio eos culpa adipisci numquam blanditiis tenetur quisquam, excepturi deserunt, quod nostrum corrupti molestiae nemo odio hic exercitationem! Assumenda, iusto non sequi.</div>
+		<button id="step-3">按钮</button>
+		<img src="C:/Users/Administrator/Desktop/1.jpg" alt="布朗熊" width="300px" height="300px" id="step-2">
+	</div>
+	<div class="mask"></div>
+	<script>
+		$(function () {
+			var i = 1
+			var t = setInterval(function () {
+				if(i > 3){
+					window.clearInterval(t)
+					t = null
+				}
+				$(`#step-${i}`).css("z-index",1001).siblings().css("z-index",999)
+				i++
+			},2000)
+		})
+	</script>
+</body>
+</html>

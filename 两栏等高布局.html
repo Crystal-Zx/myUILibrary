@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两栏等高布局</title>
+	<style>
+		.con {
+			border: 1px solid red;
+			font-size: 0;
+			overflow: hidden;
+		}
+		.son {
+			margin-bottom: -9999px;
+			/*padding-bottom: 9999px;*/
+			border-bottom: 9999px solid transparent;
+			width: 50%;
+			font-size: 16px;
+			float: left;
+		}
+		.left {
+			background-color: pink;
+		}
+		.right {
+			background-color: lightblue;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div class="con">
+		<div class="son left">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid est blanditiis eius, officiis inventore, culpa error, dignissimos reiciendis, adipisci omnis cumque quaerat aspernatur vitae molestiae. Eveniet dolores nesciunt voluptate reprehenderit!</p>
+		</div>
+		<div class="son right">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro nam praesentium unde impedit, odio accusamus soluta in quis repudiandae ad quam quia id voluptate nesciunt nulla odit neque accusantium? Culpa.</p>
+		</div>
+	</div>
+	<script>
+		
+	</script>
+</body>
+</html>

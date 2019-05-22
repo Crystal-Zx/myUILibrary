@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>伪元素实现两端+底部对齐（兼容所有浏览器）</title>
+	<title>兼容IE7及7+的伪元素实现两端+底部对齐</title>
 	<style>
 		.box {
     width: 256px;
@@ -43,7 +43,14 @@
 	      for (var indexBar = 0; indexBar < lenBar; indexBar += 1) {
 	        // 柱形图的柱子高度和背景色随机
 	        eleBars[indexBar].style.height = Math.ceil(256 * Math.random()) + 'px';
-	        eleBars[indexBar].style.backgroundColor = '#' + (Math.random() + '').slice(-6);
+	        eleBars[indexBar].style.backgroundColor = '#' + (Math.random() + '').slice(-6); /* 颜色范围小： #000-#999 */
+	    		// 为每一个child生成随机背景色
+	    		// var h = Math.floor(Math.random() * 300)	
+					// var color = '#'
+					// for(var j = 0;j < 6;j++) {
+					// 	color += (Math.random()*16 | 0).toString(16)		/* "|0"是为了是位与运算前一个值调用Number() */
+					// }
+					// console.log(h,color)
 	      }
 	    }
 

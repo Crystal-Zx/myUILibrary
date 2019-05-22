@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>margin实现两端对齐（未完成，存疑？）</title>
+	<style>
+		/*.con {
+			width: 510px;
+			height: 150px;
+			border: 1px solid red;
+		}
+		.con ul {
+			list-style: none;
+			height: 150px;
+			padding: 0;
+			margin: 0;
+			margin-right: -20px;
+		}
+		.con li {
+			width: 150px;
+			height: 150px;
+			margin-right: 20px;
+			background-color: pink;
+			float: left;
+		}*/
+		ul {
+			list-style-type: none;
+			margin-right: -20px;
+			padding: 0;
+			border: 1px solid red;
+			height: 150px;
+		}
+		li {
+			width: calc((100% - 60px) / 3);
+			height: 150px;
+			background-color: pink;
+			float: left;
+			margin-right: 20px;
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div class="con">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="con" style="height: 150px;">
+
+	</div>
+	<script>
+		
+	</script>
+</body>
+</html>
