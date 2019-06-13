@@ -1,0 +1,102 @@
+.icons-con {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.icon {
+	margin-right: 20px;
+}
+
+/* “三道杠”的菜单图标 */
+.icon-menu {
+	display: inline-block;
+	width: 140px; height: 10px;
+	padding: 35px 0;
+	border-top: 10px solid;
+	border-bottom: 10px solid;
+	background-color: currentColor;
+	background-clip: content-box;
+}
+/* icon-menu的另一种简单实现*/
+.icon-menu1 {
+	width: 120px;
+	height: 20px;
+	border-top: 60px double;
+	border-bottom: 20px solid;
+}
+
+/* 双重圆图标（可用于单选按钮样式） */
+.icon-double-dot {
+	display: inline-block;
+	width: 100px; height: 100px;
+	border: 10px solid;
+	border-radius: 50%;
+	padding: 10px;
+	background-color: currentColor;
+	background-clip: content-box;
+}
+
+/* 文件/图片上传图标，鼠标悬浮变色 DRY写法 */
+.icon-upload {
+	width: 120px;
+	height: 120px;
+	border: 2px dashed;
+	position: relative;
+}
+.icon-upload:hover {
+	color: purple;
+	cursor: pointer;
+}
+.icon-upload::before,.icon-upload::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+.icon-upload::before {
+	width: 20px;
+	border-top: 4px solid;
+	margin: -2px 0 0 -10px;
+}
+.icon-upload::after {
+	height: 20px;
+	border-left: 4px solid;
+	margin: -10px 0 0 -2px;
+}
+
+/* 边框圆角效果（其实是梯形模拟的） */
+.icon-radius {
+	width: 110px;
+	height: 110px;
+	background: currentColor;
+	position: relative;
+}
+.icon-radius::before {
+	content: "";
+	display: inline-block;
+	width: 106px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: transparent transparent currentColor transparent;
+	position: absolute;
+	top: -4px;
+}
+.icon-radius::after {
+	content: "";
+	display: inline-block;
+	width: 106px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: currentColor transparent transparent transparent;
+	position: absolute;
+	bottom: -4px;
+}
+
+.tips {
+	width: 200px;
+	border: 1px solid #6fa9c7;
+	margin: 20px auto;
+	padding: 10px;	
+	font-size: 14px;
+	color: #666;
+}
