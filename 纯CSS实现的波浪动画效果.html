@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>纯CSS实现的波浪动画效果</title>
+	<style>
+		.con {
+			width: 500px;
+			height: 500px;
+			background: #66D5FF;
+			position: fixed;
+			left: calc(50% - 250px);
+			overflow: hidden;
+			clip: rect(400px,400px,500px,100px);
+		}
+		/*.circle {
+			width: 450px;
+			height: 450px;
+		}*/
+		.con::before,.con::after {
+			content: "";
+			display: inline-block;
+			width: 92%;
+			height: 92%;
+			background: #fff;
+			animation: circleRotate 8s infinite linear;
+			position: absolute;
+			left: 50%;
+		}
+		.con::before {
+			bottom: 6%;
+			border-radius: 45%;
+			animation-duration: 13s;
+		}
+		.con::after {
+			bottom: 4%;
+			border-radius: 47%;
+			opacity: .5;
+
+		}
+		@keyframes circleRotate {
+			0% {
+				transform: translate(-50%, 0) rotateZ(0deg);
+			}
+			50% {
+				transform: translate(-50%, -2%) rotateZ(180deg);
+			}
+			100% {
+				transform: translate(-50%, 0) rotateZ(360deg);
+			}
+		}
+	</style>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div class="con">
+		<span style="font-size: 24px;color: #000;position: absolute;bottom: 8%;left: calc(50% - 45px);">波浪动画</span>
+		<!-- <div class="circle"></div> -->
+	</div>
+	<p>效果来自于：<a href="https://www.cnblogs.com/coco1s/archive/2017/07/18/7197662.html">ChokCoCo</a></p>
+</body>
+</html>
