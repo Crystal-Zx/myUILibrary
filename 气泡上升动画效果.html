@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>气泡上升动画效果</title>
+	<style>
+		ul {
+			width: 300px;
+			height: 300px;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			border: 1px solid red;
+		}
+		ul li {
+			list-style-type: none;
+			position: absolute;
+		}
+		li::after {
+			content: "";
+			display: inline-block;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: lightblue;
+			/*animation: bubble 5s linear infinite;*/
+		}
+		li.b-1 {
+			animation: bubble1 7s linear infinite;
+		}
+		li.b-2 {
+			animation: bubble2 6s linear infinite;
+		}
+		li.b-3 {
+			animation: bubble1 5s linear infinite;
+		}
+		li.b-4 {
+			animation: bubble2 7s linear infinite;
+		}
+		li.b-5 {
+			animation: bubble1 7s linear infinite;
+		}
+		li.b-6 {
+			animation: bubble2 6s linear infinite;
+		}
+		@keyframes bubble1 {
+			0% {
+				opacity: 0;
+				transform: translateX(10px) scale(.5);
+			}
+			50% {
+				opacity: 1;
+				transform: translate(0px,-50px) scale(.8);
+			}
+			100% {
+				opacity: 0;
+				transform: translate(-10px,-100px) scale(1);
+			}
+		}
+		@keyframes bubble2 {
+			0% {
+				opacity: 0;
+				transform: translateX(-5px) scale(.5);
+			}
+			50% {
+				opacity: 1;
+				transform: translate(0px,-40px) scale(.8);
+			}
+			100% {
+				opacity: 0;
+				transform: translate(5px,-80px) scale(1);
+			}
+		}
+	</style>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+	<link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+	<ul>
+		<li class="b-1"></li>
+		<li class="b-2"></li>
+		<li class="b-3"></li>
+		<li class="b-4"></li>
+		<li class="b-5"></li>
+		<li class="b-6"></li>
+	</ul>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</body>
+</html>
+
