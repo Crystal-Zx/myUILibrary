@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兼容所有浏览器的两端对齐方法</title>
+	<style>
+		ul {
+			width: 180px;
+			border: 1px solid currentColor;
+			text-align: justify;
+			padding: 0;
+			font-size: 0.1px;											/* 兼容除Chrome意外的 */
+			font-size: -webkit-calc(0px + 0px);		/* 兼容Chrome */
+		}
+		li.t1 {
+			list-style: none;
+			width: 50px;
+			height: 50px;
+			border: 1px solid pink;
+			display: inline-block;
+		}
+		.placeholder {
+			display: inline-block;
+			width: 50px;
+			vertical-align: bottom;
+		}
+	</style>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+	<link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+	<ul>
+		<li class="t1"></li>
+		<li class="t1"></li>
+		<li class="t1"></li>
+		<li class="t1"></li>
+		<li class="placeholder"></li>		<!-- 占位符，个数和列数相等即可 -->
+		<li class="placeholder"></li>
+		<li class="placeholder"></li>
+	</ul>
+	<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</body>
+</html>
+
