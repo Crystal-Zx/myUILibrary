@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标悬浮圆圈旋转动画</title>
+    <style>
+    	.con {
+    		width: 100px;
+    		height: 100px;
+    		border-radius: 50%;
+    		box-shadow: 0 0 25px #dedede;
+    		margin: 50px auto;
+    		border: 2px dashed #0f0;
+    	}
+    	.con:hover {
+    		-webkit-animation: rotateCircle 5s linear 0s infinite;
+    		-o-animation: rotateCircle 5s linear 0s infinite;
+    		animation: rotateCircle 5s linear 0s infinite;
+    	}
+    	p {
+    		color: #888;
+    		text-align: center;
+    	}
+    	@keyframes rotateCircle {
+    		0% {
+    			transform: rotate(0);
+    		}
+    		50% {
+    			transform: rotate(180deg);
+    		}
+    		100% {
+    			transform: rotate(360deg);
+    		}
+    	}
+    </style>
+</head>
+	<body>
+		<div class="con"></div>
+		<p>可在圆圈内部添加文字，作为突出样式（但文字和上述样式不能写在一起，否则文字会跟随转动）</p>
+	</body>
+</html>
