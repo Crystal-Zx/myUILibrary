@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>元素水平无缝轮播效果</title>
+  <style>
+    .con {
+        width: 500px;
+        height: 80px;
+        margin: 50px auto;
+        border: 1px solid red;
+        font-size: 0;
+        background: pink;
+        overflow: hidden;
+        position: relative;
+    }
+    .list {
+        position: absolute;
+        top: 0;left: 0;
+        right: 0;bottom: 0;
+        padding: 0;
+        list-style: none;
+        white-space: nowrap;
+        animation: move 3s linear 0s infinite;
+        
+        /*left: 0;*/
+        /*-webkit-transition: all 3s linear;
+        transition: all 3s linear;*/
+    }
+    .item {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+        font-size: 16px;
+        background: lightblue;
+        /*position: absolute;*/
+        /*left: 0;*/
+        /*float: left;*/
+        /*position: relative;*/
+        /*transition: left 5s linear;*/
+    }
+    @keyframes move {
+        0% {
+            transform: translate(0,0);
+        }
+        100% {
+            transform: translate(-500px,0);
+        }
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+  <div class="con">
+    <ul class="list">
+        <li class="item" style="background: red;">1</li>
+
+        <li class="item" style="background: orange;">2</li>
+        <li class="item" style="background: yellow;">3</li>
+        <li class="item" style="background: green;">4</li>
+        <li class="item" style="background: blue;">5</li>
+
+        <li class="item" style="background: red;">1</li>
+
+        <li class="item" style="background: orange;">2</li>
+        <li class="item" style="background: yellow;">3</li>
+        <li class="item" style="background: green;">4</li>
+        <li class="item" style="background: blue;">5</li>
+      </ul>
+  </div>
+  <script>
+    // 控制item的运动
+    // var t = setTimeout(function () {
+    //     var n = 1
+        // setInterval(function () {
+            
+        //     var num = Math.floor(Math.random()*100)
+        //     $(".list .item").eq(0).html(`${num}`).insertAfter($(".list .item:last-child"))
+        // },3000)
+    // },0)
+
+
+    // // $(".list").css("transform","translate(-100px,0)")
+    // // $(".list").css("left","0")
+    // var n = 1
+    // var t = setInterval(function () {
+    //     var dis = n * 100
+    //     $(".item").css("left",`-${dis}px`)
+    //     n++
+    //     // $(".list .item").eq(0).insertAfter($(".list .item:last-child"))
+    // },1000)
+    // var t1 = setInterval(function () {
+    //     $(".list .item").eq(0).insertAfter($(".list .item:last-child"))
+    // },4000)
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>带动画效果的渐变边框</title>
+  <style>
+  	.con {
+  		width: 500px;
+  		height: 500px;
+  		/*display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+  		align-items: center;*/
+  		background-image: linear-gradient(#5b53fd,#87a8fb);
+  	}
+    .box {
+    	width: 300px;
+    	height: 50px;
+			margin: 4px auto;
+			position: relative;
+			overflow: hidden;
+			border-radius: 4px;
+			box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    }
+    .box::before {
+			content: "";
+			display: inline-block;
+			width: 310px;
+			height: 310px;
+			margin-top: -125px;
+			margin-left: -5px;
+			background-image: linear-gradient(45deg,#51f4fa 35%,#da7efc 60%);
+			border-radius: 50%;
+			animation: rotate1 5s linear infinite 0s;
+    }
+    .box::after {
+    	content: "";
+    	display: inline-block;
+    	position: absolute;
+    	top: 3px;bottom: 3px;
+    	left: 3px;right: 3px;
+    	background: #fff;
+    	border-radius: 3px;
+    }
+    @keyframes rotate1 {
+    	0% {
+				transform: rotate(0deg);
+    	}
+    	100% {
+    		transform: rotate(355deg);
+    	}
+    }
+  </style>
+  <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+  <div class="con">
+    <div class="box">123</div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <script>
+    // var angle = 0
+    // setInterval(function () {
+    // 	console.log(angle,$(".box::before").css("background-image"))
+    // 	$(".box::before").css("background-image",`linear-gradient(${angle === 360 ? 0 : angle}deg,#51f4fa,#da7efc 65%)`)
+    // 	angle++
+    // },1000)
+  </script>
+</body>
+</html>
